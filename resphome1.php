@@ -77,13 +77,8 @@ if($_SESSION['uname']=="")
 	
 	while($row1 = mysql_fetch_array($rs1, MYSQL_ASSOC)){
 	echo '<table width="100%" class="form-w3-agile1"> 		
-	<tr align="center" >';
-	if($row1['Annonymous']==0)
-	echo'
-	<td  id="hey1" width="33%" height="40"><span style="color:white;font-family: Oswald, sans-serif;">'.$row1['ReporterName'].'</span></td> ';
-	else
-	echo'<td  id="hey1" width="33%" height="40"><span style="color:white;font-family: Oswald, sans-serif;">Annonymous</span></td> ';
-	echo'
+	<tr align="center" >
+	<td  id="hey1" width="33%" height="40"><span style="color:white;font-family: Oswald, sans-serif;">'.$row1['ReporterName'].'</span></td> 
 	<td id="hey1" width="33%" height="40"><span style="color:white;font-family: Oswald, sans-serif;">'.$row1['Dated'].'</span></td>
 	<td  id="hey1" width="33%" height="40"><form name="form2" method="get" action="responder.php">
 	<span style="color:white;font-family: Oswald, sans-serif;">

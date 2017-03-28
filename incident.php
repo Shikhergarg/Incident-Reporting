@@ -19,13 +19,8 @@ if(isset($_POST['Submit'])){
 	$loc=$_POST['Location'];
 	$date=date('d/m/Y');
 	$time=date('h:i:s a');
-	$summary=$_POST['Summary'];
-	$Annonymous=$_POST['Annonymous'];
-	if($Annonymous=="Annonymous")
-		$sql="insert into incidentReport(ReporterName,I_Name,I_Category,Location,Upload,Dated,Timer,Summary,Annonymous) values('$uname','$I_Name','$category','loc','$upload','$date','$time','$summary',1)";
-	else 
-		$sql="insert into incidentReport(ReporterName,I_Name,I_Category,Location,Upload,Dated,Timer,Summary,Annonymous) values('$uname','$I_Name','$category','loc','$upload','$date','$time','$summary',0)";
-	//$sql="insert into incidentReport(ReporterName,I_Name,I_Category,Location,Upload,Dated,Timer,Summary) values('$uname','$I_Name','$category','loc','$upload','$date','$time','$summary')"; 
+	$summary=$_POST['Summary'];	
+	$sql="insert into incidentReport(ReporterName,I_Name,I_Category,Location,Upload,Dated,Timer,Summary) values('$uname','$I_Name','$category','loc','$upload','$date','$time','$summary')"; 
 	$rs=mysql_query($sql)or die("Could Not Perform the Query");
     $file=$_FILES["fileToUpload"]["tmp_name"];
 	
@@ -109,16 +104,10 @@ if(isset($_POST['Submit'])){
 				</div>
 				
 				</div>
-				
 				<input type="file" name="fileToUpload" id="fileToUpload">
-				<div class="submit-w3l">
-					<input type="checkbox" name="Annonymous" value="Annonymous">Annonymous<br>				
-				</div>
-				
 				<div class="submit-w3l">
 					<input type="submit" name="Submit" value="Post">					
 				</div>
-				
 			</form>
 		</div>
 <!--//form-ends-here-->

@@ -41,13 +41,7 @@ $row2= mysql_fetch_array($rs2, MYSQL_ASSOC);
 		<div class="form-w3-agile1">
 			<h2>Reporter Details</h2>
 		<br>
-		<?php
-		if($row2['Annonymous']==0)
-		echo '<span style="color:white;font-family: "Oswald", sans-serif;"><center>Reporter :' . $row2['ReporterName'] . '</center><br></span>';
-		else 
-		echo '<span style="color:white;font-family: "Oswald", sans-serif;"><center>Reporter : Annonymous</center><br></span>';
-		?>
-		
+		<span style="color:white;font-family: 'Oswald', sans-serif;"><center>Reporter : <?php echo $row2['ReporterName'];?></center><br>		</span>
 		<span style="color:white;font-family: 'Oswald', sans-serif;"><center>Incident : <?php echo $row2['I_Name'];?></center><br></span>
 		<span style="color:white;font-family: 'Oswald', sans-serif;"><center>Location : <?php echo $row2['Location'];?></center><br></span>
 		<span style="color:white;font-family: 'Oswald', sans-serif;"><center>Date: <?php echo $row2['Dated'];?></center><br></span>
